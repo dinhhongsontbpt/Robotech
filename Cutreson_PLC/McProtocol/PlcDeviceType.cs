@@ -1,0 +1,40 @@
+﻿namespace Cutreson_PLC.McProtocol
+{
+    public enum PlcDeviceType
+    {
+        M = 144,
+        SM = 145,
+        L = 146,
+        F = 147,
+        V = 148,
+        S = 152,
+        X = 156,
+        Y = 157,
+        B = 160,
+        SB = 161,
+        DX = 162,
+        DY = 163,
+        D = 168,
+        SD = 169,
+        R = 175,
+        ZR = 176,
+        W = 180,
+        SW = 181,
+        TC = 192,
+        TS = 193,
+        TN = 194,
+        CC = 195,
+        CS = 196,
+        CN = 197,
+        SC = 198,
+        SS = 199,
+        SN = 200,
+        Z = 204,
+        TT = 205,
+        TM = 206,
+        CT = 207,
+        CM = 208,
+        A = 209,
+        Max = 210
+    }
+}
