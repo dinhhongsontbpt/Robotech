@@ -366,6 +366,70 @@ namespace ModelDownload_V2
                 return null;
             }
         }
+        private List<TrayModel> GetAllModels()
+        {
+            List<TrayModel> models = new List<TrayModel>();
+            bool trayEmpty;
+
+            try
+            {
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(Filename)))
+                {
+                    if (excelPackage.Workbook.Worksheets.Count == 0)
+                    {
+                        sMessage.Error("No worksheets in the Excel file");
+                        return models;
+                    }
+
+                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[1];
+                    if (worksheet == null || worksheet.Dimension == null || worksheet.Dimension.End.Row == 0)
+                    {
+                        sMessage.Error("No data in the worksheet");
+                        return models;
+                    }
+
+                    for (int modelNo = 0; modelNo < 100; modelNo++)
+                    {
+                        TrayModel model = new TrayModel();
+                        trayEmpty = true;
+                        int modelRow = 2 + 13 * modelNo;
+                        model.ModelNo = modelNo;
+                        model.ModelName = worksheet.Cells[modelRow, 2].Text;
+
+                        for (int i = 0; i < TrayRow; i++)
+                        {
+                            for (int j = 0; j < TrayColumn; j++)
+                            {
+                                string screwName = worksheet.Cells[modelRow + 1 + 2 * i, 4 + j].Text;
+                                string glue = worksheet.Cells[modelRow + 2 + 2 * i, 4 + j].Text;
+                                bool isGlue = glue.Trim().ToUpper() == "GLUE";
+                                TrayElement element = new TrayElement(screwName, isGlue);
+                                model.ScrewType[TrayColumn * i + j] = TrayElement.ScrewNames.IndexOf(screwName) + 1;
+                                if (isGlue) model.IsGlue[TrayColumn * i + j] = 1;
+                                if (!element.IsEmpty()) trayEmpty = false;
+                            }
+                        }
+
+                        if (!trayEmpty) models.Add(model);
+                        else sMessage.Warning($"Model {modelNo} is empty.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sMessage.Error($"An error occurred while loading the file: {ex.Message}");
+            }
+
+            if (models.Count < 100)
+            {
+                sMessage.Warning($"{100 - models.Count} models were not found or had errors.");
+            }
+
+            return models;
+        }
+
+
         /// <summary>
         /// //////////////////////////////////////////////////////////////////////////////
         /// </summary>
@@ -484,58 +548,80 @@ namespace ModelDownload_V2
             }
         }
 
-
         private async void btnDownloadAll_Click(object sender, EventArgs e)
         {
-            string url = $"{txtHost.Text}/api/ModelDownload/WriteSingleModel";
+            List<TrayModel> models = GetAllModels();
+            string url = $"{txtHost.Text}/api/ModelDownload/WriteAllModel";
             using (HttpClient client = new HttpClient())
             {
-                List<int> failedModels = new List<int>();
-
-                for (int i = 0; i < 100; i++)
+                try
                 {
-                    TrayModel model = GetModel(i);
-                    if (model == null)
-                    {
-                        MessageBox.Show($"Model at index {i} is missing.", "Model Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    string jsonData = JsonConvert.SerializeObject(models);
+                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync(url, content);
 
-                    try
+                    if (response.IsSuccessStatusCode)
                     {
-                        string jsonData = JsonConvert.SerializeObject(model);
-                        StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                        HttpResponseMessage response = await client.PostAsync(url, content);
-
-                        if (!response.IsSuccessStatusCode)
-                        {
-                            failedModels.Add(i);
-                        }
+                        MessageBox.Show("All models downloaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        failedModels.Add(i);
-                        MessageBox.Show($"Error downloading model {i}. Details: {ex.Message}", "Download Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string errorMessage = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show($"Failed to download models. Status Code: {response.StatusCode}\nError: {errorMessage}", "Download Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-                if (failedModels.Count == 0)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("All models downloaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    string failedModelsList = string.Join(", ", failedModels);
-                    MessageBox.Show($"Failed to download models: {failedModelsList}", "Download Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error downloading models. Details: {ex.Message}", "Download Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
+        //private async void btnDownloadAll_Click(object sender, EventArgs e)
+        //{
+        //    string url = $"{txtHost.Text}/api/ModelDownload/WriteSingleModel";
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        List<int> failedModels = new List<int>();
 
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        //        for (int i = 0; i < 100; i++)
+        //        {
+        //            TrayModel model = GetModel(i);
+        //            if (model == null)
+        //            {
+        //                MessageBox.Show($"Model at index {i} is missing.", "Model Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                return;
+        //            }
 
-        }
+        //            try
+        //            {
+        //                string jsonData = JsonConvert.SerializeObject(model);
+        //                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+        //                HttpResponseMessage response = await client.PostAsync(url, content);
+
+        //                if (!response.IsSuccessStatusCode)
+        //                {
+        //                    failedModels.Add(i);
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                failedModels.Add(i);
+        //                MessageBox.Show($"Error downloading model {i}. Details: {ex.Message}", "Download Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            }
+        //        }
+
+        //        if (failedModels.Count == 0)
+        //        {
+        //            MessageBox.Show("All models downloaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //        else
+        //        {
+        //            string failedModelsList = string.Join(", ", failedModels);
+        //            MessageBox.Show($"Failed to download models: {failedModelsList}", "Download Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //}
 
         private void btnConnect_Click(object sender, EventArgs e)
         {

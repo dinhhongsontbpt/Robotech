@@ -47,7 +47,7 @@ namespace Cutreson_PLC.McProtocol
                 client.Client.IOControl(IOControlCode.KeepAliveValues, list.ToArray(), null);
                 try
                 {
-                    client.SendTimeout = 1000;
+                    client.SendTimeout = iReceiveTimeout;
                     client.ReceiveTimeout = iReceiveTimeout;
                     client.Connect(base.HostName, base.PortNumber);
                     nsStream = client.GetStream();

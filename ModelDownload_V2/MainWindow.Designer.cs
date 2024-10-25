@@ -564,7 +564,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Model Download";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelFooter.ResumeLayout(false);
             this.tableLayoutPanelFooter.PerformLayout();
