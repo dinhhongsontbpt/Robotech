@@ -37,8 +37,11 @@
             this.lbCompanyName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelBuildDate = new System.Windows.Forms.Label();
+            this.pictureBoxCompanyLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucDateTime = new ModelDownload_V2.MyUserControl.UcDateTime();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,17 +59,16 @@
             this.btnDownload = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtDataWrite = new System.Windows.Forms.TextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.cboComport = new System.Windows.Forms.ToolStripComboBox();
-            this.txtHost = new System.Windows.Forms.ToolStripTextBox();
-            this.pictureBoxCompanyLogo = new System.Windows.Forms.PictureBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cboComport = new System.Windows.Forms.ToolStripComboBox();
             this.btnConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtHost = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ucDateTime = new ModelDownload_V2.MyUserControl.UcDateTime();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCompanyLogo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panelMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,8 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtModelNo)).BeginInit();
             this.panel3.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCompanyLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPalette
@@ -185,6 +185,18 @@
             this.labelBuildDate.Text = "Built: 2023/09/13";
             this.labelBuildDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBoxCompanyLogo
+            // 
+            this.pictureBoxCompanyLogo.BackgroundImage = global::ModelDownload_V2.Properties.Resources.LogoSora;
+            this.pictureBoxCompanyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCompanyLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxCompanyLogo.ErrorImage = global::ModelDownload_V2.Properties.Resources.LogoSora;
+            this.pictureBoxCompanyLogo.Location = new System.Drawing.Point(905, 3);
+            this.pictureBoxCompanyLogo.Name = "pictureBoxCompanyLogo";
+            this.pictureBoxCompanyLogo.Size = new System.Drawing.Size(66, 28);
+            this.pictureBoxCompanyLogo.TabIndex = 16;
+            this.pictureBoxCompanyLogo.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.ucDateTime);
@@ -196,6 +208,18 @@
             this.panel1.Size = new System.Drawing.Size(974, 69);
             this.panel1.TabIndex = 0;
             // 
+            // ucDateTime
+            // 
+            this.ucDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.ucDateTime.IsRun = false;
+            this.ucDateTime.Location = new System.Drawing.Point(594, 8);
+            this.ucDateTime.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDateTime.Name = "ucDateTime";
+            this.ucDateTime.Size = new System.Drawing.Size(382, 56);
+            this.ucDateTime.TabIndex = 3;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -206,6 +230,16 @@
             this.label1.Size = new System.Drawing.Size(306, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Model Program";
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BackgroundImage = global::ModelDownload_V2.Properties.Resources.LogoRorze;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbLogo.Location = new System.Drawing.Point(11, 4);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(140, 63);
+            this.pbLogo.TabIndex = 1;
+            this.pbLogo.TabStop = false;
             // 
             // panelMain
             // 
@@ -475,41 +509,6 @@
             this.menuStrip.TabIndex = 8;
             this.menuStrip.Text = "menuStrip";
             // 
-            // cboComport
-            // 
-            this.cboComport.BackColor = System.Drawing.Color.Red;
-            this.cboComport.Name = "cboComport";
-            this.cboComport.Size = new System.Drawing.Size(121, 28);
-            this.cboComport.Visible = false;
-            // 
-            // txtHost
-            // 
-            this.txtHost.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(200, 27);
-            // 
-            // pictureBoxCompanyLogo
-            // 
-            this.pictureBoxCompanyLogo.BackgroundImage = global::ModelDownload_V2.Properties.Resources.LogoSora;
-            this.pictureBoxCompanyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCompanyLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCompanyLogo.ErrorImage = global::ModelDownload_V2.Properties.Resources.LogoSora;
-            this.pictureBoxCompanyLogo.Location = new System.Drawing.Point(905, 3);
-            this.pictureBoxCompanyLogo.Name = "pictureBoxCompanyLogo";
-            this.pictureBoxCompanyLogo.Size = new System.Drawing.Size(66, 28);
-            this.pictureBoxCompanyLogo.TabIndex = 16;
-            this.pictureBoxCompanyLogo.TabStop = false;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.BackgroundImage = global::ModelDownload_V2.Properties.Resources.LogoRorze;
-            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbLogo.Location = new System.Drawing.Point(11, 4);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(140, 63);
-            this.pbLogo.TabIndex = 1;
-            this.pbLogo.TabStop = false;
-            // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -518,6 +517,13 @@
             this.openToolStripMenuItem.Size = new System.Drawing.Size(80, 27);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // cboComport
+            // 
+            this.cboComport.BackColor = System.Drawing.Color.Red;
+            this.cboComport.Name = "cboComport";
+            this.cboComport.Size = new System.Drawing.Size(121, 28);
+            this.cboComport.Visible = false;
             // 
             // btnConnect
             // 
@@ -529,6 +535,12 @@
             this.btnConnect.Visible = false;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
+            // txtHost
+            // 
+            this.txtHost.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtHost.Name = "txtHost";
+            this.txtHost.Size = new System.Drawing.Size(200, 27);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -537,18 +549,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(75, 27);
             this.toolStripMenuItem1.Text = "Save";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // ucDateTime
-            // 
-            this.ucDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.ucDateTime.IsRun = false;
-            this.ucDateTime.Location = new System.Drawing.Point(594, 8);
-            this.ucDateTime.Margin = new System.Windows.Forms.Padding(4);
-            this.ucDateTime.Name = "ucDateTime";
-            this.ucDateTime.Size = new System.Drawing.Size(382, 56);
-            this.ucDateTime.TabIndex = 3;
             // 
             // MainWindow
             // 
@@ -568,8 +568,10 @@
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelFooter.ResumeLayout(false);
             this.tableLayoutPanelFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCompanyLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -583,8 +585,6 @@
             this.panel3.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCompanyLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
