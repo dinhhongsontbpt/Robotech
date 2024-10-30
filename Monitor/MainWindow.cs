@@ -38,6 +38,8 @@ namespace ModelDownload
                     chromiumHostControl2.Controls.Add(chromeBrowser2);
                     chromeBrowser1.Load(links[0]);
                     chromeBrowser1.Load(links[1]);
+                    lbCam1.Text = "Cam Left: " + links[0];
+                    lbCam2.Text = "Cam Right: " + links[1];
                 }
                 else
                 {
@@ -95,6 +97,22 @@ namespace ModelDownload
 
             await Task.Delay(1000);
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private async void Zoom(ChromiumWebBrowser chromeBrowser, bool zoomIn)
+        {
+            if (zoomIn)
+            {
+                double currentZoomLevel = await chromeBrowser.GetZoomLevelAsync();
+                double zoomLevel = currentZoomLevel + 0.1;
+                chromeBrowser.SetZoomLevel(zoomLevel);
+            }
+            else
+            {
+                double currentZoomLevel = await chromeBrowser.GetZoomLevelAsync();
+                double zoomLevel = currentZoomLevel - 0.1;
+                chromeBrowser.SetZoomLevel(zoomLevel);
+            }
         }
     }
 }

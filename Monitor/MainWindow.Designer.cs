@@ -40,23 +40,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chromiumHostControl1 = new CefSharp.WinForms.Host.ChromiumHostControl();
-            this.chromiumHostControl2 = new CefSharp.WinForms.Host.ChromiumHostControl();
             this.pictureBoxCompanyLogo = new System.Windows.Forms.PictureBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.ucDateTime = new ModelDownload.MyUserControl.UcDateTime();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbCam1 = new System.Windows.Forms.Label();
+            this.chromiumHostControl1 = new CefSharp.WinForms.Host.ChromiumHostControl();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.chromiumHostControl2 = new CefSharp.WinForms.Host.ChromiumHostControl();
+            this.lbCam2 = new System.Windows.Forms.Label();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCompanyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPalette
@@ -207,11 +211,12 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -220,46 +225,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 428);
             this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chromiumHostControl2);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.groupBox2.Location = new System.Drawing.Point(490, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(481, 422);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Camera Right(192.168.3.62/pages/hmi/)";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.chromiumHostControl1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 422);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Camera Left(192.168.3.61/pages/hmi/)";
-            // 
-            // chromiumHostControl1
-            // 
-            this.chromiumHostControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chromiumHostControl1.Location = new System.Drawing.Point(3, 18);
-            this.chromiumHostControl1.Name = "chromiumHostControl1";
-            this.chromiumHostControl1.Size = new System.Drawing.Size(475, 401);
-            this.chromiumHostControl1.TabIndex = 0;
-            // 
-            // chromiumHostControl2
-            // 
-            this.chromiumHostControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chromiumHostControl2.Location = new System.Drawing.Point(3, 18);
-            this.chromiumHostControl2.Name = "chromiumHostControl2";
-            this.chromiumHostControl2.Size = new System.Drawing.Size(475, 401);
-            this.chromiumHostControl2.TabIndex = 0;
             // 
             // pictureBoxCompanyLogo
             // 
@@ -306,6 +271,75 @@
             this.ucDateTime.Size = new System.Drawing.Size(382, 69);
             this.ucDateTime.TabIndex = 3;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chromiumHostControl1);
+            this.panel2.Controls.Add(this.lbCam1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(4, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(479, 420);
+            this.panel2.TabIndex = 0;
+            // 
+            // lbCam1
+            // 
+            this.lbCam1.AutoSize = true;
+            this.lbCam1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbCam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCam1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lbCam1.Location = new System.Drawing.Point(0, 0);
+            this.lbCam1.Name = "lbCam1";
+            this.lbCam1.Size = new System.Drawing.Size(114, 29);
+            this.lbCam1.TabIndex = 1;
+            this.lbCam1.Text = "Cam Left:";
+            // 
+            // chromiumHostControl1
+            // 
+            this.chromiumHostControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chromiumHostControl1.Location = new System.Drawing.Point(0, 29);
+            this.chromiumHostControl1.Name = "chromiumHostControl1";
+            this.chromiumHostControl1.Size = new System.Drawing.Size(479, 391);
+            this.chromiumHostControl1.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(490, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(480, 420);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.chromiumHostControl2);
+            this.panel4.Controls.Add(this.lbCam2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(480, 420);
+            this.panel4.TabIndex = 1;
+            // 
+            // chromiumHostControl2
+            // 
+            this.chromiumHostControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chromiumHostControl2.Location = new System.Drawing.Point(0, 29);
+            this.chromiumHostControl2.Name = "chromiumHostControl2";
+            this.chromiumHostControl2.Size = new System.Drawing.Size(480, 391);
+            this.chromiumHostControl2.TabIndex = 2;
+            // 
+            // lbCam2
+            // 
+            this.lbCam2.AutoSize = true;
+            this.lbCam2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbCam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCam2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lbCam2.Location = new System.Drawing.Point(0, 0);
+            this.lbCam2.Name = "lbCam2";
+            this.lbCam2.Size = new System.Drawing.Size(131, 29);
+            this.lbCam2.TabIndex = 1;
+            this.lbCam2.Text = "Cam Right:";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -327,10 +361,13 @@
             this.panel1.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCompanyLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -349,11 +386,14 @@
         private System.Windows.Forms.PictureBox pictureBoxCompanyLogo;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private CefSharp.WinForms.Host.ChromiumHostControl chromiumHostControl2;
-        private CefSharp.WinForms.Host.ChromiumHostControl chromiumHostControl1;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Panel panel2;
+        private CefSharp.WinForms.Host.ChromiumHostControl chromiumHostControl1;
+        private System.Windows.Forms.Label lbCam1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private CefSharp.WinForms.Host.ChromiumHostControl chromiumHostControl2;
+        private System.Windows.Forms.Label lbCam2;
     }
 }
 
