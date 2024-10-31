@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.MainPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -296,8 +296,8 @@
             this.tbScrews.ReadOnly = true;
             this.tbScrews.RowHeadersVisible = false;
             this.tbScrews.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.tbScrews.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.tbScrews.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tbScrews.RowTemplate.Height = 24;
             this.tbScrews.Size = new System.Drawing.Size(238, 470);
             this.tbScrews.TabIndex = 42;

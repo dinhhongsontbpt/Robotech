@@ -1,4 +1,4 @@
-﻿namespace ModelDownload
+﻿namespace VisionMonitor
 {
     partial class MainWindow
     {
@@ -43,7 +43,7 @@
             this.pictureBoxCompanyLogo = new System.Windows.Forms.PictureBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.ucDateTime = new ModelDownload.MyUserControl.UcDateTime();
+            this.ucDateTime = new VisionMonitor.MyUserControl.UcDateTime();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbCam1 = new System.Windows.Forms.Label();
             this.chromiumHostControl1 = new CefSharp.WinForms.Host.ChromiumHostControl();
@@ -228,10 +228,10 @@
             // 
             // pictureBoxCompanyLogo
             // 
-            this.pictureBoxCompanyLogo.BackgroundImage = global::ModelDownload.Properties.Resources.LogoSora;
+            this.pictureBoxCompanyLogo.BackgroundImage = global::VisionMonitor.Properties.Resources.LogoSora;
             this.pictureBoxCompanyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxCompanyLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCompanyLogo.ErrorImage = global::ModelDownload.Properties.Resources.LogoSora;
+            this.pictureBoxCompanyLogo.ErrorImage = global::VisionMonitor.Properties.Resources.LogoSora;
             this.pictureBoxCompanyLogo.Location = new System.Drawing.Point(905, 3);
             this.pictureBoxCompanyLogo.Name = "pictureBoxCompanyLogo";
             this.pictureBoxCompanyLogo.Size = new System.Drawing.Size(66, 28);
@@ -240,7 +240,7 @@
             // 
             // btnReload
             // 
-            this.btnReload.BackgroundImage = global::ModelDownload.Properties.Resources.Restart;
+            this.btnReload.BackgroundImage = global::VisionMonitor.Properties.Resources.Restart;
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReload.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnReload.Location = new System.Drawing.Point(518, 0);
@@ -252,7 +252,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.BackgroundImage = global::ModelDownload.Properties.Resources.LogoRorze;
+            this.pbLogo.BackgroundImage = global::VisionMonitor.Properties.Resources.LogoRorze;
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbLogo.Location = new System.Drawing.Point(11, 4);
             this.pbLogo.Name = "pbLogo";

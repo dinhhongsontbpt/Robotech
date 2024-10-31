@@ -1,4 +1,4 @@
-﻿namespace ModelDownload.MyUserControl
+﻿namespace VisionMonitor.MyUserControl
 {
     partial class UcTrayElement
     {

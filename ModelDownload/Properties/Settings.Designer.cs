@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelDownload.Properties
+namespace VisionMonitor.Properties
 {
 
 

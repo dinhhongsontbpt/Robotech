@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using static OfficeOpenXml.ExcelErrorValue;
 
-namespace ModelDownload.Class
+namespace VisionMonitor.Class
 {
     public class TrayElement
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ModelDownload.Common
+namespace VisionMonitor.Common
 {
     public class sMessage
     {

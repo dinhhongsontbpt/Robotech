@@ -1,4 +1,4 @@
-﻿namespace ModelDownload
+﻿namespace VisionMonitor
 {
     partial class MainWindow
     {
@@ -39,7 +39,7 @@
             this.labelBuildDate = new System.Windows.Forms.Label();
             this.pictureBoxCompanyLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucDateTime = new ModelDownload.MyUserControl.UcDateTime();
+            this.ucDateTime = new VisionMonitor.MyUserControl.UcDateTime();
             this.label1 = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -185,10 +185,10 @@
             // 
             // pictureBoxCompanyLogo
             // 
-            this.pictureBoxCompanyLogo.BackgroundImage = global::ModelDownload.Properties.Resources.LogoSora;
+            this.pictureBoxCompanyLogo.BackgroundImage = global::VisionMonitor.Properties.Resources.LogoSora;
             this.pictureBoxCompanyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxCompanyLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCompanyLogo.ErrorImage = global::ModelDownload.Properties.Resources.LogoSora;
+            this.pictureBoxCompanyLogo.ErrorImage = global::VisionMonitor.Properties.Resources.LogoSora;
             this.pictureBoxCompanyLogo.Location = new System.Drawing.Point(905, 3);
             this.pictureBoxCompanyLogo.Name = "pictureBoxCompanyLogo";
             this.pictureBoxCompanyLogo.Size = new System.Drawing.Size(66, 28);
@@ -231,7 +231,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.BackgroundImage = global::ModelDownload.Properties.Resources.LogoRorze;
+            this.pbLogo.BackgroundImage = global::VisionMonitor.Properties.Resources.LogoRorze;
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbLogo.Location = new System.Drawing.Point(11, 4);
             this.pbLogo.Name = "pbLogo";
@@ -508,7 +508,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.openToolStripMenuItem.Image = global::ModelDownload.Properties.Resources.OpenFileFolder;
+            this.openToolStripMenuItem.Image = global::VisionMonitor.Properties.Resources.OpenFileFolder;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(80, 28);
             this.openToolStripMenuItem.Text = "Open";
@@ -523,7 +523,7 @@
             // btnConnect
             // 
             this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnConnect.Image = global::ModelDownload.Properties.Resources.UsbConnector;
+            this.btnConnect.Image = global::VisionMonitor.Properties.Resources.UsbConnector;
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(100, 28);
             this.btnConnect.Text = "Connect";

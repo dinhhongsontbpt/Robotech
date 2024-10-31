@@ -1,7 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
-using ModelDownload.Class;
-using ModelDownload.Common;
-using ModelDownload.MyUserControl;
+using VisionMonitor.Class;
+using VisionMonitor.Common;
+using VisionMonitor.MyUserControl;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace ModelDownload
+namespace VisionMonitor
 {
     public partial class MainWindow : KryptonForm
     {

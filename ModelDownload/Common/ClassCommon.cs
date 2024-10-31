@@ -1,4 +1,4 @@
-﻿namespace ModelDownload.Common
+﻿namespace VisionMonitor.Common
 {
     public  class ClassCommon
     {

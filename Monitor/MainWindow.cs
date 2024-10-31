@@ -1,18 +1,20 @@
 ﻿using CefSharp;
 using CefSharp.WinForms;
-using CefSharp.WinForms.Host;
 using ComponentFactory.Krypton.Toolkit;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
-namespace ModelDownload
+namespace VisionMonitor
 {
     public partial class MainWindow : KryptonForm
     {
         private ChromiumWebBrowser chromeBrowser1 = new ChromiumWebBrowser();
         private ChromiumWebBrowser chromeBrowser2 = new ChromiumWebBrowser();
+        private System.Timers.Timer reloadTimer;
+        private double reloadTime; //Time auto reload browser (minute)
         public MainWindow()
         {
             InitializeComponent();
@@ -24,8 +26,13 @@ namespace ModelDownload
             InitObject();
             InitDisplay();
             PerformDelayedMinimizeMaximize();
+            // Initialize and configure the timer
+            reloadTimer = new System.Timers.Timer(reloadTime * 60 * 1000);
+            reloadTimer.Elapsed += ReloadTimer_Elapsed;
+            reloadTimer.AutoReset = true;
+            reloadTimer.Start();
         }
-        private string filePath = "links.txt";
+        private string filePath = "SettingVisionMonitor.txt";
         private void InitObject()
         {
             CheckAndCreateFile();
@@ -37,13 +44,14 @@ namespace ModelDownload
                     chromiumHostControl1.Controls.Add(chromeBrowser1);
                     chromiumHostControl2.Controls.Add(chromeBrowser2);
                     chromeBrowser1.Load(links[0]);
-                    chromeBrowser1.Load(links[1]);
+                    chromeBrowser2.Load(links[1]);
                     lbCam1.Text = "Cam Left: " + links[0];
                     lbCam2.Text = "Cam Right: " + links[1];
+                    reloadTime = Convert.ToDouble(links[2]);
                 }
                 else
                 {
-                    MessageBox.Show("File links.txt phải chứa ít nhất 2 link.");
+                    MessageBox.Show("File SettingVisionMonitor.txt phải chứa ít nhất 2 link, 1 số");
                 }
             }
             catch (Exception ex)
@@ -61,6 +69,14 @@ namespace ModelDownload
             this.WindowState = FormWindowState.Maximized;
         }
         #endregion
+        private void ReloadTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.Invoke((MethodInvoker)delegate
+            {
+                chromeBrowser1.Reload();
+                chromeBrowser2.Reload();
+            });
+        }
         private void CheckAndCreateFile()
         {
             if (!File.Exists(filePath))
@@ -68,8 +84,9 @@ namespace ModelDownload
                 try
                 {
                     string[] defaultLinks = {
-                        "http://192.168.3.61/pages/hmi",
-                        "http://192.168.3.62/pages/hmi"
+                        "http://192.168.3.61/pages/hmi/",
+                        "http://192.168.3.62/pages/hmi/",
+                        "10" //Time auto refresh browser
                     };
                     File.WriteAllLines(filePath, defaultLinks);
                 }

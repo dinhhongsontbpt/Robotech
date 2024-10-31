@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ModelDownload
+namespace VisionMonitor
 {
     internal static class Program
     {

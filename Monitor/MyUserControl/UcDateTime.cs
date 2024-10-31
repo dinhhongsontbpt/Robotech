@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
-using ModelDownload.Common;
+using VisionMonitor.Common;
 
-namespace ModelDownload.MyUserControl
+namespace VisionMonitor.MyUserControl
 {
     public partial class UcDateTime : UserControl
     {

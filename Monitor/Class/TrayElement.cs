@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ModelDownload.Class
+namespace VisionMonitor.Class
 {
     public class TrayElement
     {

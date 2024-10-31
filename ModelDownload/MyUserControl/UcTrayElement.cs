@@ -1,9 +1,9 @@
-﻿using ModelDownload.Class;
-using ModelDownload.Common;
+﻿using VisionMonitor.Class;
+using VisionMonitor.Common;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ModelDownload.MyUserControl
+namespace VisionMonitor.MyUserControl
 {
     public partial class UcTrayElement : UserControl
     {
